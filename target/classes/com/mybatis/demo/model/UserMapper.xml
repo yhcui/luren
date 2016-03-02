@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.demo.mapper.UserMapper">
+  <resultMap type="com.mybatis.demo.model.User" id="resultListUser">
+        <id column="id" property="id" />
+        <result column="user" property="user" />
+  </resultMap>
+  
+  <select id="selectByPrimaryKey" parameterType="int" resultType="com.mybatis.demo.model.User">
+    select  *  from User where id = #{id}
+  </select>
+  
+  <select id="selectList" resultMap="resultListUser">
+    select  *  from User
+  </select>
+  
+  <insert id="addUser" parameterType="com.mybatis.demo.model.User" useGeneratedKeys="true" keyProperty="id">
+    insert into User(user) value(#{user});
+  </insert>
+  
+  <update id="updateUser" parameterType="com.mybatis.demo.model.User" >
+        update user set user=#{user} where user=#{user}
+  </update>
+  
+  <delete id="deleteUser" parameterType="int">
+        delete from user where id=#{id}
+  </delete>
+</mapper>

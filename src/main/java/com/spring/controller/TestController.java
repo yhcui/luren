@@ -19,10 +19,12 @@ public class TestController {
 	@Autowired
 	private ITestService testService;
 	
+//	@RequestMapping(value="/str",produces = {"application/json;charset=UTF-8"})
 	@RequestMapping("/str")
+//	@RequestMapping(value="/str",produces = {"text/html;charset=UTF-8"})
 	@ResponseBody
 	public String str(){
-		return "str";
+		return "中文";
 	}
 	
 	@RequestMapping("/page")

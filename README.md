@@ -9,3 +9,4 @@ mybaits-config.xml 仅仅用来测试mybaits使用
 	3.spring+mybaits整合
 	4.spring-test 单元测试
 	5.spring-test mockito 单元测试
+测试修改
